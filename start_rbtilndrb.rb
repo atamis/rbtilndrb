@@ -19,6 +19,7 @@
 #       MA 02110-1301, USA.
 require 'lib/general'
 require 'lib/rabbit'
+require 'lib/jumping'
 
 $year = 0
 $mrabbits = []
