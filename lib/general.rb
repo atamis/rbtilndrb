@@ -19,7 +19,8 @@
 #       MA 02110-1301, USA.
 
 
-
+require 'jumping'
+require 'rabbit'
 
 def info
 	results = "Year: #{$year}
