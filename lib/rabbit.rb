@@ -19,10 +19,69 @@
 #       MA 02110-1301, USA.
 
 
-class StdClass
-	def initialize
+class Rabbit
+	def initialize(gender)
+		if gender == "m"
+			@@gender = "male"
+		elsif gender == "f"
+			@@gender = "female"
+		else
+			puts "Must be \"m\" or \"f\" please."
+		end
+		@@age = 0
+		@@eligible = false
+		@@alive = true
+	end
+	
+	def alive?
+		return @@alive
+	end
+	
+	def gender
+		return @@gender
+	end
+	
+	def male?
+		if @@gender == "male"
+			return true
+		else
+			return false
+		end
+	end
+	
+	def age
+		return @@age
+	end
+	
+	def female?
+		if @@gender == "female"
+			return true
+		else
+			return false
+		end
+	end
+	
+	def available?
+		return @@eligible
+	end
+	
+	def breed
+		if @@eligible == false
+			return "Not eligible!"
+		else
+			@@eligible == false
+		end
+	end
+	
+	def next 
+		@@age += 1
+		if @@age >= 3
+			@@eligible == true
+		end
 		
+		if @@age > 7
+			@@alive = false
+			@@eligible = false
+		end
 	end
 end
-
-x = StdClass.new
