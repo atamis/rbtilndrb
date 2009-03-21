@@ -19,29 +19,7 @@
 #       MA 02110-1301, USA.
 
 
-def jump
-	$year += 1
-	ml = []
-	fl = []
-	$mrabbits.each { |r| r.next }
-	$frabbits.each { |r| r.next }
-	$mrabbits.each { |m| ml[ml.length] = m}
-	$frabbits.each { |f| fl[fl.length] = f}
-	if ml.length <= fl.length
-		ml.each {|m| m.breed}
-		ml.length.times do
-			counter = ml.length
-			until counter == 0
-				if fl[counter].available?
-					fl[counter].breed
-				end
-				counter -= 1
-			end
-		end 
-	end
-	$mrabbits.each { |r| r.next}
-	$frabbits.each { |r| r.next}
-end
+
 
 def info
 	results = "Year: #{$year}
