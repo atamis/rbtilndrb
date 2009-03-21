@@ -36,5 +36,5 @@ loop do
 	arg = input.split
 	input = arg[0]
 	args = arg[1]
-	proccess_input(input, arg)
+	proccess_input(input, args)
 end
