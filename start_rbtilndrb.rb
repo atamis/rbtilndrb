@@ -18,11 +18,15 @@
 #       Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
 #       MA 02110-1301, USA.
 
-
-class StdClass
-	def initialize
-		
-	end
+def jump
+	$year += 1
+	$mrabbits.each { |r| r.next }
+	$frabbits.each { |r| r.next}
 end
 
-x = StdClass.new
+require 'lib/rabbit'
+$year = 0
+$mrabbits = []
+$frabbits = []
+$mrabbits[1] = Rabbit.new("m")
+$frabbits[1] = Rabbit.new("f")
