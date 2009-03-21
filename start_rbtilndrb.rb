@@ -17,16 +17,24 @@
 #       along with this program; if not, write to the Free Software
 #       Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
 #       MA 02110-1301, USA.
-
-def jump
-	$year += 1
-	$mrabbits.each { |r| r.next }
-	$frabbits.each { |r| r.next}
-end
-
+require 'lib/general'
 require 'lib/rabbit'
+
 $year = 0
 $mrabbits = []
 $frabbits = []
 $mrabbits[1] = Rabbit.new("m")
 $frabbits[1] = Rabbit.new("f")
+
+puts "Welcome to RbtIlndRB! The Rabbit Island Simulator written in ruby! 
+Type ? for more help."
+puts
+
+loop do
+	print "root@rabbit-island $ "
+	input = gets.chomp
+	arg = input.split
+	input = arg[0]
+	args = arg[1]
+	proccess_input(input, arg)
+end
