@@ -23,7 +23,8 @@ require 'lib/rabbit'
 $year = 0
 $mrabbits = []
 $frabbits = []
-$mrabbits[1] = Rabbit.new("m")
+$mrabbits[0] = Rabbit.new("m")
+$frabbits[0] = Rabbit.new("f")
 $frabbits[1] = Rabbit.new("f")
 
 puts "Welcome to RbtIlndRB! The Rabbit Island Simulator written in ruby! 
