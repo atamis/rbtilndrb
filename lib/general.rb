@@ -19,8 +19,7 @@
 #       MA 02110-1301, USA.
 
 
-require 'jumping'
-require 'rabbit'
+
 
 def info
 	results = "Year: #{$year}
@@ -49,11 +48,19 @@ def proccess_input(input, arg)
 					var = gets.chomp
 					puts "Printing #{var}"
 					puts eval("puts #{var}")
+				when "make"
+					puts "Forcing creation of new rabbits!"
+					make_new($mrabbits[0], $frabbits[0])
+				when "year"
+					puts "Nexting all rabbits."
+					$rabbits.each { |r| r.each { |rp| rp.next}}
 			end
 		when "i"
 			puts "Status:"
 			puts info
 		when "j"
 			jump
-		end
+		else
+			puts "Command not found! Fail! Try again."
+	end
 end

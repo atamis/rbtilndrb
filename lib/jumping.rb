@@ -25,23 +25,21 @@ def jump
 	fl = []
 	$mrabbits.each { |r| r.next }
 	$frabbits.each { |r| r.next }
-	$mrabbits.each { |m| ml[ml.length] = m}
-	$frabbits.each { |f| fl[fl.length] = f}
+	$mrabbits.each { |m| ml.push(m) if m.available?}
+	$frabbits.each { |f| fl.push(f) if f.available?}
 	if ml.length <= fl.length
-		ml.each {|m| m.breed}
-		ml.length.times do
-			counter = ml.length
-			until counter == 0
-				if fl[counter].available?
-					fl[counter].breed
-					
-				end
-				counter -= 1
-			end
-		end 
+		counter = 0
+		ml.length.times do 
+			make_new(ml[counter], fl[counter])
+			counter += 1
+		end
+	else
+		counter = 0
+		fl.length.times do
+			make_new(ml[counter], fl[counter])
+			counter += 1
+		end
 	end
-	$mrabbits.each { |r| r.next}
-	$frabbits.each { |r| r.next}
 end
 
 def make_new(m, f)
@@ -49,9 +47,9 @@ def make_new(m, f)
 	f.breed
 	(rand(7)+3).times do
 		if rand(2) == 0
-			$mrabbit[$mrabbit.length] = Rabbit.new("m")
+			$mrabbits.push(Rabbit.new("m"))
 		else
-			$frabbit[$frabbit.length] = Rabbit.new
+			$frabbits.push(Rabbit.new("f"))
 		end
 	end
 end

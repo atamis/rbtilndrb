@@ -75,7 +75,7 @@ class Rabbit
 	
 	def next 
 		@@age += 1
-		if @@age >= 3
+		if @@age > 3
 			@@eligible == true
 		end
 		
