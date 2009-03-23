@@ -35,7 +35,7 @@ puts
 
 loop do
 	print "root@rabbit-island $ "
-	input = gets.chomp
+	input = gets.chomp.downcase
 	arg = input.split
 	input = arg[0]
 	args = arg[1]
