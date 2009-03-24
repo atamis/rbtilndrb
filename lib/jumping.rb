@@ -19,12 +19,10 @@
 #       MA 02110-1301, USA.
 
 
-def jump
-	$year += 1
+def breed_all
+
 	ml = []
 	fl = []
-	$mrabbits.each { |r| r.next }
-	$frabbits.each { |r| r.next }
 	mr_there = false
 	$mrabbits.each do |mr|
 		if mr.available?
