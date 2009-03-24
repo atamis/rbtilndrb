@@ -50,10 +50,13 @@ def proccess_input(input, arg)
 					puts eval("puts #{var}")
 				when "make"
 					puts "Forcing creation of new rabbits!"
-					make_new($mrabbits[0], $frabbits[0])
+					make_new()
 				when "year"
 					puts "Nexting all rabbits."
 					$rabbits.each { |r| r.each { |rp| rp.next}}
+				when "ruby"
+					print "Ruby code to eval: "
+					eval(gets.chomp)
 			end
 		when "i"
 			puts "Status:"
