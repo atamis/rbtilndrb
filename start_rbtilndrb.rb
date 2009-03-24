@@ -23,8 +23,10 @@ require 'lib/jumping'
 
 $year = 0
 $mrabbits = []
+$number_of_m_rabbits = 1
 $frabbits = []
-$rabbits = [$mrabbits, $frabbits]
+$number_of_f_rabbits = 2
+#$rabbits = [$mrabbits, $frabbits]
 $mrabbits[0] = Rabbit.new("m")
 $frabbits[0] = Rabbit.new("f")
 $frabbits[1] = Rabbit.new("f")
