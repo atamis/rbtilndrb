@@ -55,6 +55,28 @@ def breed_all
 #	end
 end
 
+
+def next_year
+	$year += 1
+	$mrabbits.each {|r| r.next}
+	$frabbits.each {|r| r.next}
+	$mrabbits.each do |r|
+		if r.alive?
+			$number_of_m_rabbits += 1
+		else
+			$number_of_m_rabbits -= 1
+		end
+	end
+	$frabbits.each do |r|
+		if r.alive?
+			$number_of_f_rabbits += 1
+		else
+			$number_of_f_rabbits -= 1
+		end
+	end
+	breed_all
+end
+
 def make_new(m, f)
 	(rand(7)+3).times do
 		if rand(2) == 0
