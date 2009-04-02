@@ -62,7 +62,7 @@ def proccess_input(input, arg)
 			puts "Status:"
 			puts info
 		when "j"
-			jump
+			next_year	
 		else
 			puts "Command not found! Fail! Try again."
 	end
