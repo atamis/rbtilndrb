@@ -21,12 +21,12 @@
 
 class Rabbit
 	def initialize(gender)
-		if gender == "m"
+		if gender == "f"
 			@@gender = "male"
-		elsif gender == "f"
+		else gender == "m"
 			@@gender = "female"
-		else
-			puts "Must be \"m\" or \"f\" please."
+#		else
+#			puts "Must be \"m\" or \"f\" please."
 		end
 		@@age = 0
 		@@eligible = false
