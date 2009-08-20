@@ -25,14 +25,18 @@ def breed_all
 	fl = []
 	mr_there = false
 	$mrabbits.each do |mr|
-		if mr.available?
-			mr_there = true
+		if mr_there
+			if mr.available?
+				mr_there = true
+			end
 		end
 	end
 	fl_there = false
 	$frabbits.each do |fr|
-		if fr.available?
-			fl_there = true
+		if fl_there
+			if fr.available?
+				fl_there = true
+			end
 		end
 	end
 	if mr_there && fl_there
