@@ -2,7 +2,7 @@ require 'test/unit/testsuite'
 require 'tc_rabbit'
 
 
-class TS_MyTests
+class RbtIlndrb
   def self.suite
     suite = Test::Unit::TestSuite.new
     suite << TestRabbit.suite
